@@ -78,6 +78,13 @@ export class Store implements Cache {
       if (this.keys) {
         SchemaPredicates.expectValidKeyingConfig(this.schema, this.keys);
       }
+
+      const hasUpdates =
+        Object.keys(this.updates.Mutation).length > 0 ||
+        Object.keys(this.updates.Subscription).length > 0;
+      if (hasUpdates) {
+        SchemaPredicates.expectValidUpdatesConfig(this.schema, this.updates);
+      }
     }
 
     this.rootFields = {

@@ -284,3 +284,27 @@ This error occurs when an unknown type is found in `opts.keys`.
 
 Check whether your schema is up-to-date, or whether you're using an invalid
 typename in `opts.keys`, maybe due to a typo.
+
+## (21) Invalid mutation <a id="21"></a>
+
+> Invalid mutation: `???` is not a mutation in the defined schema
+> but the `updates` option is referencing it.
+
+When you're passing an introspected schema to the cache exchange, it is
+able to check whether your `opts.updates` is valid.
+This error occurs when an unknown mutation is found in `opts.updates`.
+
+Check whether your schema is up-to-date, or whether you're using an invalid
+mutation name in `opts.updates.Mutation`, maybe due to a typo.
+
+## (22) Invalid subscruption <a id="22"></a>
+
+> Invalid subscription: `???` is not a subscription in the defined schema
+> but the `updates` option is referencing it.
+
+When you're passing an introspected schema to the cache exchange, it is
+able to check whether your `opts.updates` is valid.
+This error occurs when an unknown subscription is found in `opts.updates`.
+
+Check whether your schema is up-to-date, or whether you're using an invalid
+subscription name in `opts.updates.Subscription`, maybe due to a typo.
